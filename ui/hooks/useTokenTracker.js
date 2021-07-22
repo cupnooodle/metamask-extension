@@ -30,7 +30,11 @@ export function useTokenTracker(
         const additionalTokenData = memoizedTokens.find((t) =>
           isEqualCaseInsensitive(t.address, token.address),
         );
-        return { ...token, isERC721: additionalTokenData?.isERC721, image: additionalTokenData?.image };
+        return {
+          ...token,
+          isERC721: additionalTokenData?.isERC721,
+          image: additionalTokenData?.image,
+        };
       });
       setTokensWithBalances(matchingTokensWithIsERC721Flag);
       setLoading(false);

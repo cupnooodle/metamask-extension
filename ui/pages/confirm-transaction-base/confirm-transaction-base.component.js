@@ -822,7 +822,6 @@ export default class ConfirmTransactionBase extends Component {
         contentComponent={contentComponent}
         nonce={customNonceValue || nonce}
         unapprovedTxCount={unapprovedTxCount}
-        assetImage={assetImage}
         identiconAddress={identiconAddress}
         errorMessage={submitError}
         errorKey={errorKey}

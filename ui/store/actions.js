@@ -1167,7 +1167,7 @@ export function showAccountDetail(address) {
       !currentTabIsConnectedToNextAddress;
 
     try {
-      await _setSelectedAddress(dispatch, address);
+      await _setSelectedAddress(address);
       await forceUpdateMetamaskState(dispatch);
     } catch (error) {
       dispatch(displayWarning(error.message));

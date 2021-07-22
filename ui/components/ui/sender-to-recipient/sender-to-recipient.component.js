@@ -134,10 +134,7 @@ function RecipientWithAddress({
     >
       {!addressOnly && (
         <div className="sender-to-recipient__sender-icon">
-          <Identicon
-            address={checksummedRecipientAddress}
-            diameter={24}
-          />
+          <Identicon address={checksummedRecipientAddress} diameter={24} />
         </div>
       )}
       <Tooltip

@@ -133,11 +133,7 @@ const TokenOverview = ({ className, token }) => {
       }
       className={className}
       icon={
-        <Identicon
-          diameter={32}
-          address={token.address}
-          image={token.image}
-        />
+        <Identicon diameter={32} address={token.address} image={token.image} />
       }
     />
   );
@@ -149,6 +145,7 @@ TokenOverview.propTypes = {
     address: PropTypes.string.isRequired,
     decimals: PropTypes.number,
     symbol: PropTypes.string,
+    image: PropTypes.string,
     isERC721: PropTypes.bool,
   }).isRequired,
 };

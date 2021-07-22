@@ -6,9 +6,7 @@ import { useSelector } from 'react-redux';
 import TokenCell from '../token-cell';
 import { useI18nContext } from '../../../hooks/useI18nContext';
 import { useTokenTracker } from '../../../hooks/useTokenTracker';
-import {
-  getShouldHideZeroBalanceTokens,
-} from '../../../selectors';
+import { getShouldHideZeroBalanceTokens } from '../../../selectors';
 import { getTokens } from '../../../ducks/metamask/metamask';
 
 export default function TokenList({ onTokenClick }) {
