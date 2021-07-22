@@ -1069,6 +1069,7 @@ describe('Actions', () => {
 
       background.getApi.returns({
         addToken: addTokenStub,
+        getState: sinon.stub().callsFake((cb) => cb(null, baseMockState)),
       });
 
       actions._setBackgroundConnection(background.getApi());
@@ -1098,6 +1099,7 @@ describe('Actions', () => {
 
       background.getApi.returns({
         addToken: addTokenStub,
+        getState: sinon.stub().callsFake((cb) => cb(null, baseMockState)),
       });
 
       actions._setBackgroundConnection(background.getApi());
@@ -1131,6 +1133,7 @@ describe('Actions', () => {
 
       background.getApi.returns({
         removeToken: removeTokenStub,
+        getState: sinon.stub().callsFake((cb) => cb(null, baseMockState)),
       });
 
       actions._setBackgroundConnection(background.getApi());
@@ -1144,6 +1147,7 @@ describe('Actions', () => {
 
       background.getApi.returns({
         removeToken: sinon.stub().callsFake((_, cb) => cb(new Error('error'))),
+        getState: sinon.stub().callsFake((cb) => cb(null, baseMockState)),
       });
 
       actions._setBackgroundConnection(background.getApi());

@@ -9,10 +9,6 @@
       "web3ShimUsageOrigins": {}
     },
     "AppStateController": {
-      "browserEnvironment": {
-        "browser": "chrome",
-        "os": "mac"
-      },
       "connectedStatusPopoverHasBeenShown": true,
       "defaultHomeActiveTabName": null,
       "recoveryPhraseReminderHasBeenShown": false,
@@ -52,7 +48,7 @@
       "participateInMetaMetrics": true
     },
     "NetworkController": {
-      "network": "loading",
+      "network": "1337",
       "networkDetails": {
         "EIPS": {}
       },
@@ -85,7 +81,7 @@
     "PreferencesController": {
       "completedOnboarding": true,
       "currentLocale": "en",
-      "dismissSeedBackUpReminder": false,
+      "dismissSeedBackUpReminder": true,
       "featureFlags": {
         "showIncomingTransactions": true
       },
@@ -125,20 +121,7 @@
     },
     "TokenListController": {
       "tokenList": {},
-      "tokensChainsCache": {
-        "4": {
-          "data": {
-            "error": "ChainId 4 is not supported"
-          },
-          "timestamp": 1626907328282
-        },
-        "1337": {
-          "data": {
-            "error": "ChainId 1337 is not supported"
-          },
-          "timestamp": 1626907353957
-        }
-      }
+      "tokensChainsCache": {}
     },
     "TokensController": {
       "allTokens": {
@@ -156,7 +139,15 @@
       },
       "ignoredTokens": [],
       "suggestedAssets": [],
-      "tokens": []
+      "tokens": [
+        {
+          "address": "0x86002be4cdd922de1ccb831582bf99284b99ac12",
+          "decimals": 4,
+          "image": null,
+          "isERC721": false,
+          "symbol": "TST"
+        }
+      ]
     },
     "TransactionController": {
       "transactions": {}

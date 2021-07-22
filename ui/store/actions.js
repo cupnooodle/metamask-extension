@@ -1252,27 +1252,25 @@ export function addToken(
     } catch (error) {
       log.error(error);
       dispatch(displayWarning(error.message));
-      return;
     } finally {
+      await forceUpdateMetamaskState(dispatch);
       dispatch(hideLoadingIndication());
     }
   };
 }
 
 export function removeToken(address) {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(showLoadingIndication());
-    return new Promise((resolve, reject) => {
-      background.removeToken(address, (err, tokens) => {
-        dispatch(hideLoadingIndication());
-        if (err) {
-          dispatch(displayWarning(err.message));
-          reject(err);
-          return;
-        }
-        resolve(tokens);
-      });
-    });
+    try {
+      await promisifiedBackground.removeToken(address);
+    } catch (error) {
+      log.error(error);
+      dispatch(displayWarning(error.message));
+    } finally {
+      await forceUpdateMetamaskState(dispatch);
+      dispatch(hideLoadingIndication());
+    }
   };
 }
 
