@@ -136,10 +136,6 @@ export default class PreferencesController {
     this.store.updateState({ firstTimeFlowType: type });
   }
 
-  getAssetImages() {
-    return this.store.getState().assetImages;
-  }
-
   /**
    * Add new methodData to state, to avoid requesting this information again through Infura
    *

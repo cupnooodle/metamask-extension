@@ -7,14 +7,12 @@ import TokenCell from '../token-cell';
 import { useI18nContext } from '../../../hooks/useI18nContext';
 import { useTokenTracker } from '../../../hooks/useTokenTracker';
 import {
-  getAssetImages,
   getShouldHideZeroBalanceTokens,
 } from '../../../selectors';
 import { getTokens } from '../../../ducks/metamask/metamask';
 
 export default function TokenList({ onTokenClick }) {
   const t = useI18nContext();
-  const assetImages = useSelector(getAssetImages);
   const shouldHideZeroBalanceTokens = useSelector(
     getShouldHideZeroBalanceTokens,
   );
@@ -46,7 +44,6 @@ export default function TokenList({ onTokenClick }) {
   return (
     <div>
       {tokensWithBalances.map((tokenData, index) => {
-        tokenData.image = assetImages[tokenData.address];
         return <TokenCell key={index} {...tokenData} onClick={onTokenClick} />;
       })}
     </div>

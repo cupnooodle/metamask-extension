@@ -15,10 +15,10 @@ export default class SendAssetRow extends Component {
         address: PropTypes.string,
         decimals: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         symbol: PropTypes.string,
+        image: PropTypes.string,
       }),
     ).isRequired,
     accounts: PropTypes.object.isRequired,
-    assetImages: PropTypes.object,
     selectedAddress: PropTypes.string.isRequired,
     sendAssetAddress: PropTypes.string,
     updateSendAsset: PropTypes.func.isRequired,
@@ -169,9 +169,8 @@ export default class SendAssetRow extends Component {
   }
 
   renderAsset(token, insideDropdown = false) {
-    const { address, symbol } = token;
+    const { address, symbol, image } = token;
     const { t } = this.context;
-    const { assetImages } = this.props;
 
     return (
       <div
@@ -183,7 +182,7 @@ export default class SendAssetRow extends Component {
           <Identicon
             address={address}
             diameter={36}
-            image={assetImages[address]}
+            image={image}
           />
         </div>
         <div className="send-v2__asset-dropdown__asset-data">

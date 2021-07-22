@@ -20,7 +20,6 @@ import { useTokenFiatAmount } from '../../../hooks/useTokenFiatAmount';
 import { ASSET_TYPES, updateSendAsset } from '../../../ducks/send';
 import { setSwapsFromToken } from '../../../ducks/swaps/swaps';
 import {
-  getAssetImages,
   getCurrentKeyring,
   getIsSwapsChain,
 } from '../../../selectors/selectors';
@@ -42,8 +41,6 @@ const TokenOverview = ({ className, token }) => {
     },
   });
   const history = useHistory();
-  const assetImages = useSelector(getAssetImages);
-
   const keyring = useSelector(getCurrentKeyring);
   const usingHardwareWallet = keyring.type.search('Hardware') !== -1;
   const { tokensWithBalances } = useTokenTracker([token]);
@@ -109,7 +106,7 @@ const TokenOverview = ({ className, token }) => {
                 dispatch(
                   setSwapsFromToken({
                     ...token,
-                    iconUrl: assetImages[token.address],
+                    iconUrl: token?.image,
                     balance,
                     string: balanceToRender,
                   }),
@@ -139,7 +136,7 @@ const TokenOverview = ({ className, token }) => {
         <Identicon
           diameter={32}
           address={token.address}
-          image={assetImages[token.address]}
+          image={token.image}
         />
       }
     />

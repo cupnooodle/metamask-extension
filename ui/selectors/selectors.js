@@ -251,11 +251,6 @@ export function getTargetAccount(state, targetAddress) {
 export const getTokenExchangeRates = (state) =>
   state.metamask.contractExchangeRates;
 
-export function getAssetImages(state) {
-  const assetImages = state.metamask.assetImages || {};
-  return assetImages;
-}
-
 export function getAddressBook(state) {
   const chainId = getCurrentChainId(state);
   if (!state.metamask.addressBook[chainId]) {
